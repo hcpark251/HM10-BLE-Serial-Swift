@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mmo-W3-fsE">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="od7-Ph-hAM">
+            <objects>
+                <navigationController id="Mmo-W3-fsE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="liC-RG-5Tu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XBT-Mw-t2e" kind="relationship" relationship="rootViewController" id="Rzh-zm-f8n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XRz-U5-AKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-40" y="1063"/>
+        </scene>
+        <!--컨트롤 패널-->
+        <scene sceneID="tLg-Tj-OQ4">
+            <objects>
+                <viewController id="XBT-Mw-t2e" customClass="ViewController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gPu-YD-ePz"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kl0-Io-NXK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ORM-QS-LKw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmu-n3-lju">
+                                <rect key="frame" x="60" y="221" width="320" height="100"/>
+                                <state key="normal" title="Button" image="btn_on.png"/>
+                                <connections>
+                                    <action selector="SwitchChanged:" destination="XBT-Mw-t2e" eventType="touchUpInside" id="Gww-QR-PO1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wmu-n3-lju" firstAttribute="centerX" secondItem="ORM-QS-LKw" secondAttribute="centerX" id="Wwh-hy-f5f"/>
+                            <constraint firstItem="wmu-n3-lju" firstAttribute="centerY" secondItem="ORM-QS-LKw" secondAttribute="centerY" id="ZHR-NW-TCL"/>
+                            <constraint firstItem="wmu-n3-lju" firstAttribute="width" secondItem="ORM-QS-LKw" secondAttribute="width" id="pyj-Vn-RdV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="컨트롤 패널" id="VyB-w4-bhN">
+                        <barButtonItem key="leftBarButtonItem" title="기기검색" id="yvU-1m-VnR">
+                            <connections>
+                                <action selector="barButtonPressed:" destination="XBT-Mw-t2e" id="bgJ-Ne-xZV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="connectBarButton" destination="yvU-1m-VnR" id="iHu-Np-9mc"/>
+                        <outlet property="navItem" destination="VyB-w4-bhN" id="XKg-53-RKS"/>
+                        <outlet property="switchControl" destination="wmu-n3-lju" id="7Q7-OA-4IR"/>
+                        <segue destination="bke-Bt-xim" kind="presentation" identifier="ShowScanner" modalPresentationStyle="formSheet" id="KRk-RU-8Fp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="plI-bX-Adu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="634" y="1063"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6VL-Oe-idH">
+            <objects>
+                <navigationController id="bke-Bt-xim" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eks-Fm-3uG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sHg-m1-Vc0" kind="relationship" relationship="rootViewController" id="Upc-18-GvK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C76-m3-CG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="644" y="263"/>
+        </scene>
+        <!--기기 검색중..-->
+        <scene sceneID="XWP-Uk-nd0">
+            <objects>
+                <viewController id="sHg-m1-Vc0" customClass="ScannerViewController" customModule="HomeControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aBI-Vw-5qW"/>
+                        <viewControllerLayoutGuide type="bottom" id="AeR-cO-6uM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3bH-0n-3dH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MdQ-Uf-pqj">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="08N-Kw-01j">
+                                        <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="08N-Kw-01j" id="a0Z-3d-SZL">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfT-SO-7VU">
+                                                    <rect key="frame" x="8" y="0.0" width="452" height="43"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기기연결" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ak2-wJ-I6Z">
+                                                    <rect key="frame" x="468" y="0.0" width="124" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="124" id="Esb-IH-FUT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ak2-wJ-I6Z" firstAttribute="leading" secondItem="TfT-SO-7VU" secondAttribute="trailing" constant="8" id="4n9-iP-pfP"/>
+                                                <constraint firstItem="TfT-SO-7VU" firstAttribute="centerY" secondItem="ak2-wJ-I6Z" secondAttribute="centerY" id="AIz-eH-iBX"/>
+                                                <constraint firstItem="TfT-SO-7VU" firstAttribute="leading" secondItem="a0Z-3d-SZL" secondAttribute="leadingMargin" id="MJT-cA-c6o"/>
+                                                <constraint firstItem="ak2-wJ-I6Z" firstAttribute="trailing" secondItem="a0Z-3d-SZL" secondAttribute="trailingMargin" id="On1-ta-Te6"/>
+                                                <constraint firstItem="TfT-SO-7VU" firstAttribute="top" secondItem="a0Z-3d-SZL" secondAttribute="topMargin" constant="-8" id="UN9-GZ-d7p"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="TfT-SO-7VU" secondAttribute="bottom" constant="-8" id="bdI-nX-atf"/>
+                                                <constraint firstItem="TfT-SO-7VU" firstAttribute="height" secondItem="ak2-wJ-I6Z" secondAttribute="height" id="yZz-ik-c0y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="sHg-m1-Vc0" id="J94-q1-Ehh"/>
+                                    <outlet property="delegate" destination="sHg-m1-Vc0" id="be0-eR-8Rk"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MdQ-Uf-pqj" firstAttribute="centerY" secondItem="3bH-0n-3dH" secondAttribute="centerY" id="3L2-I4-SDZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MdQ-Uf-pqj" secondAttribute="trailing" constant="-20" id="IfF-sE-gLM"/>
+                            <constraint firstItem="MdQ-Uf-pqj" firstAttribute="top" secondItem="aBI-Vw-5qW" secondAttribute="bottom" constant="-64" id="Lws-pL-aog"/>
+                            <constraint firstItem="AeR-cO-6uM" firstAttribute="top" secondItem="MdQ-Uf-pqj" secondAttribute="bottom" id="YIF-40-wMc"/>
+                            <constraint firstItem="MdQ-Uf-pqj" firstAttribute="leading" secondItem="3bH-0n-3dH" secondAttribute="leadingMargin" constant="-20" id="nFx-a5-br2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="기기 검색중.." id="Rgl-hK-CS9">
+                        <barButtonItem key="leftBarButtonItem" title="닫기" id="p0K-tl-yic">
+                            <connections>
+                                <action selector="cancel:" destination="sHg-m1-Vc0" id="fX7-bD-iLM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="다시 검색" id="rhr-23-MK0">
+                            <connections>
+                                <action selector="tryAgain:" destination="sHg-m1-Vc0" id="u4s-TK-4GJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="MdQ-Uf-pqj" id="CPS-F9-Bbu"/>
+                        <outlet property="tryAgainButton" destination="rhr-23-MK0" id="2S1-ap-tFK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AWw-z5-Tcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1393" y="284"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn_on.png" width="647" height="283"/>
+    </resources>
+</document>
